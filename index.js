@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
   res.send("Hello");
 });
 
-app.listen(process.env.PORT || 5000, () => {
+const server = app.listen(process.env.PORT || 5000, () => {
   var host = server.address().address;
   var port = server.address().port;
   console.log(`Server running on http://${host}:${port}`);

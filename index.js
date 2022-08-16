@@ -20,7 +20,6 @@ const hostname = "18.130.120.151";
 const ftpport = 3000;
 
 const ftpServer = new FtpSvr({
-  url: "ftp://" + hostname + ":" + process.env.PORT,
   file_format: "ls",
   anonymous: false,
   greeting: ["Hello user"],

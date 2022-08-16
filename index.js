@@ -16,11 +16,11 @@ const FtpSvr = require("ftp-srv");
 // });
 // console.log(server.address());
 
-const hostname = "ftp--server-heroko.herokuapp.com";
-const ftpport = process.env.PORT;
+const hostname = "18.130.120.151";
+const ftpport = 3000;
 
 const ftpServer = new FtpSvr({
-  url: "ftps://" + hostname + ":" + process.env.PORT,
+  url: "ftp://" + hostname + ":" + process.env.PORT,
   file_format: "ls",
   anonymous: false,
   greeting: ["Hello user"],

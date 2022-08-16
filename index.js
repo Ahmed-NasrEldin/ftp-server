@@ -16,10 +16,11 @@ const FtpSvr = require("ftp-srv");
 // });
 // console.log(server.address());
 
-const hostname = "18.130.120.151";
+const hostname = "localhost";
 const ftpport = 3000;
 
 const ftpServer = new FtpSvr({
+  url: "ftp://" + hostname + ":" + ftpport,
   file_format: "ls",
   anonymous: false,
   greeting: ["Hello user"],

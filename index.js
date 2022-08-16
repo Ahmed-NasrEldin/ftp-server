@@ -10,7 +10,9 @@ app.get("/", (req, res) => {
 });
 
 app.listen(process.env.PORT || 5000, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  var host = server.address().address;
+  var port = server.address().port;
+  console.log(`Server running on http://${host}:${port}`);
 });
 
 const hostname = "0.0.0.0";

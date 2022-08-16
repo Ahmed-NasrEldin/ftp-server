@@ -3,27 +3,24 @@ const app = express();
 const port = 5000;
 const FtpSvr = require("ftp-srv");
 
-app.use(express.json());
+// app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Hello");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello");
+// });
 
-const server = app.listen(process.env.PORT || 5000, () => {
-  var host = server.address().address;
-  var port = server.address().port;
-  console.log(`Server running on http://${host}:${port}`);
-});
-console.log(server.address());
+// const server = app.listen(process.env.PORT || 5000, () => {
+//   var host = server.address().address;
+//   var port = server.address().port;
+//   console.log(`Server running on http://${host}:${port}`);
+// });
+// console.log(server.address());
 
-const hostname = "0.0.0.0";
-const ftpport = 5000;
+const hostname = "ftp--server-heroko.herokuapp.com";
+const ftpport = process.env.PORT;
 
 const ftpServer = new FtpSvr({
-  url: "ftp://" + hostname + ":" + ftpport,
-  pasv_url: "ftp://172.18.56.71",
-  pasv_min: 5054,
-  pasv_max: 5055,
+  url: "ftps://" + hostname + ":" + process.env.PORT,
   file_format: "ls",
   anonymous: false,
   greeting: ["Hello user"],

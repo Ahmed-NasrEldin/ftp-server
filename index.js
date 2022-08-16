@@ -16,7 +16,7 @@ const FtpSvr = require("ftp-srv");
 // });
 // console.log(server.address());
 
-const hostname = "localhost";
+const hostname = "0.0.0.0";
 const ftpport = 3000;
 
 const ftpServer = new FtpSvr({

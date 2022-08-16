@@ -14,9 +14,10 @@ const server = app.listen(process.env.PORT || 5000, () => {
   var port = server.address().port;
   console.log(`Server running on http://${host}:${port}`);
 });
+console.log(server.address());
 
 const hostname = "0.0.0.0";
-const ftpport = 5053;
+const ftpport = 5000;
 
 const ftpServer = new FtpSvr({
   url: "ftp://" + hostname + ":" + ftpport,
